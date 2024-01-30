@@ -22,9 +22,12 @@ number of fitness 161
 - I've implemented 4 more strategies to play Nim and I've optimized the optimal strategy, this last solution was communicated to the teacher assistant with an email
 - the fitness function is simply playing 100 matches (50 playing first and 50 playing second) after less than 50 games the code is able to spot the optimal strategy among the other fives
 ### LAB 9 December 3 (final commit)
--TODO
+- to solve the problem I've implemented two strategies:
+   - the first one is a classical GA with a lot of try, I've implemented a set of crossover functions, a tournament function, and a mutation function. I can solve the problem for the instances one and two but it takes a lot of epoches
+   - the second one is a ES strategy with a sigma both used to change the number of loci change at every mutation and the probabilty to change the value in one or zero.This strategy works perfectly in few epoches.
 ### LAB 10 December 19 
--TODO
+- I've implemented a clever player to play tic tac toe and I managed with a montecarlo strategy to beat it. This strategy uses a dictionary with key state+move and a value to understand if that move is good given the state. With the help of this dictionary we have 85% winnig percentage against a clever opponent.
+- It's important in my opinion to have a greater reward for a final win respect to a final lost
 ## Issues
 ### Nov 23-24 lab 2 
 #### review of Diegomille99 
@@ -50,7 +53,7 @@ number of fitness 161
   - I couldn't grasp the rationale behind using different weights against different strategies. While I understand the desire to train more against the optimal strategy, I would suggest either incorporating your rules into the opponents' strategies or, alternatively, removing the purely random strategy also to save time.
 
  Overall I really liked your work and I wish you good luck for the future labs
- ### Nov 07-08 lab 9
+ ### Dec 07-08 lab 9
  #### review of lorecalo99
  - What I liked:
    - Your code is well-documented and clear.
