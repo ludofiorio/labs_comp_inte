@@ -1,6 +1,7 @@
-## Ludovico Fiorio s306058 report
-### Halloween challenge October 31
-- to solve this challenge I've implemented a simple tweak that considers if we covered the set or not and so it acts accordingly
+### Ludovico Fiorio s306058 report
+I completed all the labs and issues on time 
+#### Halloween challenge October 31
+- to solve this challenge I've implemented a simple tweak that considers if we covered the set or not and so it acts accordingly -> if the set is already covered I remove a set if the set is not covered I add one.
 - this are the final results:
  ````
 (0, 0)
@@ -18,19 +19,19 @@ number of fitness 161
 
  ````
 
-### LAB 2 November 13
+#### LAB 2 November 13
 - I've implemented 4 more strategies to play Nim and I've optimized the optimal strategy, this last solution was communicated to the teacher assistant with an email
 - the fitness function is simply playing 100 matches (50 playing first and 50 playing second) after less than 50 games the code is able to spot the optimal strategy among the other fives
-### LAB 9 December 3 (final commit)
+#### LAB 9 December 3 (final commit)
 - to solve the problem I've implemented two strategies:
    - the first one is a classical GA with a lot of try, I've implemented a set of crossover functions, a tournament function, and a mutation function. I can solve the problem for the instances one and two but it takes a lot of epoches
    - the second one is a ES strategy with a sigma both used to change the number of loci change at every mutation and the probabilty to change the value in one or zero.This strategy works perfectly in few epoches.
-### LAB 10 December 19 
+#### LAB 10 December 19 
 - I've implemented a clever player to play tic tac toe and I managed with a montecarlo strategy to beat it. This strategy uses a dictionary with key state+move and a value to understand if that move is good given the state. With the help of this dictionary we have 85% winnig percentage against a clever opponent.
 - It's important in my opinion to have a greater reward for a final win respect to a final lost
-## Issues
-### Nov 23-24 lab 2 
-#### review of Diegomille99 
+### Issues
+#### Nov 23-24 lab 2 
+##### review of Diegomille99 
 - Areas for Improvement:
   - The "optimal" function is redundantly written at both line 28 and line 70. This redundancy might lead to compiling problems, similar to what occurs at line 68. It seems likely that line 68 
  was inadvertently overlooked
@@ -42,7 +43,7 @@ number of fitness 161
   - The code demonstrates a robust mathematical foundation, particularly in the application of the Dirichlet distribution.
   - The pick strategy is well-implemented and concise.
   - The sections involving mutation, crossover, and slicing appear to be effective and well-implemented.
-#### review of Francesco1102
+##### review Francesco1102
 - What I Liked About the Code:
   - The code functions very well, and it is exceptionally clear with numerous helpful comments.
   - I particularly enjoyed the implemented strategies and the use of prints to display results, especially towards the end.
@@ -53,8 +54,8 @@ number of fitness 161
   - I couldn't grasp the rationale behind using different weights against different strategies. While I understand the desire to train more against the optimal strategy, I would suggest either incorporating your rules into the opponents' strategies or, alternatively, removing the purely random strategy also to save time.
 
  Overall I really liked your work and I wish you good luck for the future labs
- ### Dec 07-08 lab 9
- #### review of lorecalo99
+ #### Dec 07-08 lab 9
+ ##### review of lorecalo99
  - What I liked:
    - Your code is well-documented and clear.
    - I appreciate the way you initially boost performance by dividing the population into champions.
@@ -69,7 +70,7 @@ acceptable, 2 or 3 might be more optimal.
 the code every time.
   - Your code should check if fitness one is reached to stop calculating fitness. The main reason you never reached fitness one is because
 you never considered a different rate of changing 1->0 and vice versa
-#### review of RaffaeleViola
+##### review of RaffaeleViola
 Hello,
 - Positive aspects:
   - The README file and comments are well-crafted. Note that there is a slight mix-up between "fitness" and "calls" in the final results section.
@@ -80,8 +81,8 @@ Hello,
    - To enhance clarity, reduce the number of print statements. Include information about the specific instance [1, 2, 510] of the problem being addressed at each step.
   - Implement periodic checks for fitness == 1 to minimize unnecessary calls to the fitness function.
    - Think about the use of a population other than an individual class.
-### Dec 26-27 lab 10
-#### review of jackcauda00 
+#### Dec 26-27 lab 10
+##### review jackcauda00 
 Hi,
 - What I appreciate about your code:
    - The initial agent is a comprehensive and well-executed solution for playing tic-tac-toe using reinforcement learning, yielding impressive results.
@@ -91,7 +92,7 @@ Hi,
    - There are duplicate definitions of the agent function in the last and third-from-last notebook cells. Removing one of these redundant definitions would enhance clarity.
    - Instead of consistently playing against a random opponent, consider incorporating a more sophisticated adversary, such as a player capable of recognizing when it's about to lose and responding accordingly.
    - Adjust the rewards system: currently, if a state has two moves leading to a loss and one move resulting in a win, it is considered a bad state (-1-1+1=-1 overall). A more effective approach would be to assign a higher reward for winning, such as 10 (-1-1+10=8), to have alse a faster convergence.
-#### review of FedeBucce
+##### review of FedeBucce
 hi,
 - what I appreciate about your code:
    - the code is very well documented; almost every line has a comment, making the code very understandable.
