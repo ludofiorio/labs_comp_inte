@@ -104,4 +104,37 @@ hi,
   - the final results are high but not optimal against a completely random opponent. In my opinion, you should try using different rewards, like 10 for winning and -1 for losing.
 constants should be in capital letters.
    - another nice idea may be playing and training against a more clever opponent. For example, an opponent that checks if it has a winning move or if the other player has a winning move and acts accordingly.
-#### Quixo Report
+### Quixo Report
+I worked at this project with Umberto Fontanazza and Alberto Ricatto.
+The core of the project is using a min_max function with alfa beta pruning. At the beginnig the idea was to use advisors, each advisor analysing the board was giving a value between 0-100 and we used backpropagation to adapt the weights connected to each advisor.
+Here I show an example of advisor
+ ````
+ def compact_board_version2(board: Board, player: PlayerID) -> float:
+    """counts the O close to others O and the X close to others X and returns a score
+        only takes into consideration the positions inside the board not the perimeter"""
+    count_x, count_o = 0, 0
+    arr = board.ndarray
+    for pos in CENTER:
+        player_int = arr[pos]
+        if player_int not in (0, 1):
+            continue
+        #adjacents = [(pos[0]-1,pos[1]-1),(pos[0]-1,pos[1]),(pos[0]-1,pos[1]+1),(pos[0]+1,pos[1]-1),(pos[0]+1,pos[1]),(pos[0]+1,pos[1]+1),(pos[0],pos[1]-1),(pos[0],pos[1]+1)]
+        adjacents = [(pos[0] + i, pos[1] + j) for i in range(-1, 2) for j in range(-1, 2) if i != 0 or j != 0]
+        for adjacent in adjacents:
+            if arr[adjacent] == player_int:
+                if player_int == 1:
+                    count_x += 1
+                else:
+                    count_o += 1
+    return __rule_advantage(count_o, count_x, player)
+ ````
+At the end we decided to switch to a faster but equally powerfull strategy. Instead than using advisor we compute stats based on the board. Here's an example of the simplest rule that considers what player has more pieces on the corners:
+ ````
+ for corner in CORNERS:
+            if self[corner] == 0:
+                o += 1
+            elif self[corner] == 1:
+                x += 1
+        self.corner_control = (o, x, 4)
+ ````
+There are two oracle files (the file where a valuation of the board is done) one for the advisor and one for the board stats, the board.py file takes into consideration if there are any symmetries of the board.
