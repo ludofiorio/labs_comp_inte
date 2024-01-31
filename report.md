@@ -1,5 +1,5 @@
 ## Ludovico Fiorio s306058 report
-I completed all the labs and issues on time 
+I completed all the labs and reviews on time 
 ### Halloween challenge October 31
 - to solve this challenge I've implemented a simple tweak that considers if we covered the set or not and so it acts accordingly -> if the set is already covered I remove a set if the set is not covered I add one.
 - the strategy is an hill climber
@@ -111,7 +111,7 @@ def optimal(state: Nim) -> Nimply:
             break
     return trajectory
     ````
-## Issues
+## Reviews
 ### Nov 23-24 lab 2 
 #### review Diegomille99 
 - Areas for Improvement:
