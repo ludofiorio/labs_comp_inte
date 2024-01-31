@@ -138,3 +138,14 @@ At the end we decided to switch to a faster but equally powerfull strategy. Inst
         self.corner_control = (o, x, 4)
  ````
 There are two oracle files (the file where a valuation of the board is done) one for the advisor and one for the board stats, the board.py file takes into consideration if there are any symmetries of the board.
+ ````
+  def filter_out_symmetrics(positions: Iterable[Position], axes: Iterable[Symmetry]) -> set[Position]:
+        filtered_positions: set[Position] = set()
+        for position in positions:
+            symmetrics = position.symmetrics(axes)
+            if any(symmetric in filtered_positions for symmetric in symmetrics):
+                continue # symmetric already present
+            filtered_positions.add(position)
+        return filtered_positions
+ ````
+Our project is winnig with min_max depth 2,3 against a random or clever opponent. It wins also against a human player with depth=4.
