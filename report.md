@@ -23,10 +23,7 @@ number of fitness 161
 ### LAB 2 November 13
 - I've implemented 4 more strategies to play Nim.
 - Alberto Ricatto and me optimized the optimal strategy, this version of optimal was communicated to the teacher assistant with an email
-   ````
-  import numpy as np
-
-
+````
 def nim_sum(state: Nim) -> int:
     counter = 0
     for c in state.rows:
@@ -62,15 +59,15 @@ def optimal(state: Nim) -> Nimply:
             spicy_moves = list(analysis["possible_moves"].keys())
     ply = random.choice(spicy_moves)
     return ply
-     ````
+ ````
 - the fitness function is simply playing 100 matches (50 playing first and 50 playing second) after less than 50 games the code is able to spot the optimal strategy among the other fives. That means that at the end the probabilty to pick a strategy other than the perfect one is zero while at the beginning all had the same probabilty.
-  ````
+ ````
  {<function pure_random at 0x0000023CFCDB89A0>: 0.0,
  <function eliminate_one_row at 0x0000023CFCDB8D60>: 0.0,
  <function eliminate_two_row at 0x0000023CFCDB9620>: 0.0,
  <function leave_one_elem_row at 0x0000023CFCDB9E40>: 0.0,
  <function optimal at 0x0000023CFD26A3E0>: 1.4}
-      ````
+ ````
 - I tried to adjust the tweaking function to have smaller variations on time, but this doesn't seem to work so I commented the code
 ### LAB 9 December 3 (final commit)
 - to solve the problem I've implemented two strategies:
